@@ -1,0 +1,89 @@
+/* Global styles */
+
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: sans-serif;
+	font-size: small;
+}
+
+h1 {
+	text-align: center;
+}
+
+/* Page layout */
+
+#tools {
+	position: absolute;
+	left: 0px;
+	width: 200px;
+	height: 100%;
+	padding: 5px;
+	background: #F0F0F0;
+}
+
+#editor {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+/* State styles */
+
+.state {
+	width: 200px;
+	overflow: hidden;
+	background: white;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+.state-name {
+	margin: 5px;
+	padding: 0px;
+	display: inline-block;
+}
+
+.state-section-title {
+	display: inline-block;
+	padding: 0px;
+	margin: 5px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.state-button {
+	display: inline-block;
+	padding: 0px;
+	margin: 5px;
+	cursor: pointer;
+	float: right;
+}
+
+/* Specific named states */
+
+#state-fire {
+	border: 1px solid red;
+}
+
+/* New state dialog */
+
+#newstatebox {
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	/*border: 1px solid orange;*/
+	z-index: 3;
+}
+
+#newstatebox label {
+	background: white;
+}
+
+.ui-autocomplete {
+	list-style: none;
+	border: 1px solid black;
+	display: inline-block;
+}
