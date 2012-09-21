@@ -23,14 +23,14 @@ $.fn.state = function(name) {
 			.append('<p class="state-section-title">Properties</p>')
 			.append($('<p class="state-button">+</p>')
 				.click(function(event) {
-					$(this).parent().append('<p>Property</p>');
+					$(this).parent().append(propertyList());
 				})))
 		// Transitions div
 		.append($('<div class="state-section" />')
 			.append('<p class="state-section-title">Transitions</p>')
 			.append($('<p class="state-button">+</p>')
 				.click(function(event) {
-					$(this).parent().append('<p>Transition</p>');
+					$(this).parent().append(transitionList());
 				})))
 		// Stop clicks bubbling back to #editor
 		.click(function(event) {
@@ -66,4 +66,36 @@ function removeState(name) {
 	$('#state-'+name).remove();
 	// Remove name from list
 	states.splice($.inArray(name, states), 1);
+}
+
+function option(name) {
+	return '<option value="' + name + '">' + name + '</option>';
+}
+
+function propertyList() {
+	// Stick everything in a div!
+	return $("<div />", {
+			class: 'state-property',
+		})
+		// Select list of property types.
+		.append($("<select />", {})
+			.append(option("script"))
+			.append(option("timeout"))
+		)
+		.append($("<input />", {
+			type: 'text',
+			class: 'state-property-value',
+		}));
+}
+
+function transitionList() {
+	return $("<div />", {
+			class: 'state-transition',
+		})
+		// Select list of transition events.
+		.append($("<select />", {})
+			.append(option("timeout"))
+			.append(option("triggerDown"))
+			.append(option("triggerUp"))
+		);
 }
